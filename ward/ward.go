@@ -98,3 +98,8 @@ func initialize(X [][]float64) Tree {
 func dist(g1, g2 Group) float64 {
 	return float64(g1.N*g2.N) / float64(g1.N+g2.N) * math.Pow(floats.Distance(g1.vec, g2.vec, 2), 2)
 }
+
+// GetDist returns dist of the Group
+func (g *Group) GetDist() float64 {
+	return g.dist
+}

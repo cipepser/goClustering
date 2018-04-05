@@ -261,3 +261,46 @@ func Test_dist(t *testing.T) {
 		})
 	}
 }
+
+func TestGroup_GetDist(t *testing.T) {
+	type fields struct {
+		left    int
+		right   int
+		N       int
+		vec     []float64
+		dist    float64
+		visited bool
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   float64
+	}{
+		{name: "test for GetDist",
+			fields: fields{
+				left:    -1,
+				right:   -1,
+				N:       1,
+				vec:     []float64{},
+				dist:    1.2,
+				visited: false,
+			},
+			want: 1.2,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			g := &Group{
+				left:    tt.fields.left,
+				right:   tt.fields.right,
+				N:       tt.fields.N,
+				vec:     tt.fields.vec,
+				dist:    tt.fields.dist,
+				visited: tt.fields.visited,
+			}
+			if got := g.GetDist(); got != tt.want {
+				t.Errorf("Group.getDist() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
