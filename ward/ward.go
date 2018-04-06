@@ -9,10 +9,10 @@ import (
 // Group represents a cluster.
 // Each Group is represented by `vec` and has N,
 // the number of menber included in the group.
-// Each Group have 2 children(left and right) excludes leaf node,
-// leaf node's left and right is -1.
+// Each Group have 2 children(Left and Right) excludes leaf node,
+// leaf node's Left and Right is -1.
 type Group struct {
-	left, right, N int
+	Left, Right, N int
 	vec            []float64
 	dist           float64
 	visited        bool
@@ -56,8 +56,8 @@ func linkage(T Tree) Tree {
 	vec := centerOfGravity(T[idxi], T[idxj])
 
 	T = append(T, Group{
-		left:    idxi,
-		right:   idxj,
+		Left:    idxi,
+		Right:   idxj,
 		N:       T[idxi].N + T[idxj].N,
 		vec:     vec,
 		dist:    d,
@@ -83,8 +83,8 @@ func initialize(X [][]float64) Tree {
 	T := make([]Group, len(X))
 	for i, vec := range X {
 		T[i] = Group{
-			left:    -1,
-			right:   -1,
+			Left:    -1,
+			Right:   -1,
 			N:       1,
 			vec:     vec,
 			dist:    0,

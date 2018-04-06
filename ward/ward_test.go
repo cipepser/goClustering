@@ -25,40 +25,40 @@ func TestWard(t *testing.T) {
 			},
 			want: Tree{
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{0, 0},
 					dist:    0,
 					visited: true,
 				},
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{1, 0},
 					dist:    0,
 					visited: true,
 				},
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{5, 0},
 					dist:    0,
 					visited: true,
 				},
 				Group{
-					left:    0,
-					right:   1,
+					Left:    0,
+					Right:   1,
 					N:       2,
 					vec:     []float64{0.5, 0},
 					dist:    0.5,
 					visited: true,
 				},
 				Group{
-					left:    2,
-					right:   3,
+					Left:    2,
+					Right:   3,
 					N:       3,
 					vec:     []float64{2, 0},
 					dist:    13.5,
@@ -90,16 +90,16 @@ func Test_linkage(t *testing.T) {
 			args: args{
 				Tree{
 					Group{
-						left:    -1,
-						right:   -1,
+						Left:    -1,
+						Right:   -1,
 						N:       1,
 						vec:     []float64{0, 0},
 						dist:    0,
 						visited: false,
 					},
 					Group{
-						left:    -1,
-						right:   -1,
+						Left:    -1,
+						Right:   -1,
 						N:       1,
 						vec:     []float64{2, 0},
 						dist:    0,
@@ -109,24 +109,24 @@ func Test_linkage(t *testing.T) {
 			},
 			want: Tree{
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{0, 0},
 					dist:    0,
 					visited: true,
 				},
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{2, 0},
 					dist:    0,
 					visited: true,
 				},
 				Group{
-					left:    0,
-					right:   1,
+					Left:    0,
+					Right:   1,
 					N:       2,
 					vec:     []float64{1, 0},
 					dist:    2,
@@ -157,16 +157,16 @@ func Test_centerOfGravity(t *testing.T) {
 			name: "test for centerOfGravity (0, 0) and (2, 0)",
 			args: args{
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{0, 0},
 					dist:    0,
 					visited: false,
 				},
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{2, 0},
 					dist:    0,
@@ -202,8 +202,8 @@ func Test_initialize(t *testing.T) {
 				},
 			},
 			want: Tree{Group{
-				left:    -1,
-				right:   -1,
+				Left:    -1,
+				Right:   -1,
 				N:       1,
 				vec:     []float64{0, 0},
 				dist:    0,
@@ -234,16 +234,16 @@ func Test_dist(t *testing.T) {
 			name: "test for dist from (0, 0) to (3, 4)",
 			args: args{
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{0, 0},
 					dist:    0,
 					visited: false,
 				},
 				Group{
-					left:    -1,
-					right:   -1,
+					Left:    -1,
+					Right:   -1,
 					N:       1,
 					vec:     []float64{3, 4},
 					dist:    0,
@@ -264,8 +264,8 @@ func Test_dist(t *testing.T) {
 
 func TestGroup_GetDist(t *testing.T) {
 	type fields struct {
-		left    int
-		right   int
+		Left    int
+		Right   int
 		N       int
 		vec     []float64
 		dist    float64
@@ -278,8 +278,8 @@ func TestGroup_GetDist(t *testing.T) {
 	}{
 		{name: "test for GetDist",
 			fields: fields{
-				left:    -1,
-				right:   -1,
+				Left:    -1,
+				Right:   -1,
 				N:       1,
 				vec:     []float64{},
 				dist:    1.2,
@@ -291,8 +291,8 @@ func TestGroup_GetDist(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			g := &Group{
-				left:    tt.fields.left,
-				right:   tt.fields.right,
+				Left:    tt.fields.Left,
+				Right:   tt.fields.Right,
 				N:       tt.fields.N,
 				vec:     tt.fields.vec,
 				dist:    tt.fields.dist,
