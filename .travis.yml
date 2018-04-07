@@ -5,8 +5,8 @@ addons:
   apt:
     packages:
       - mercurial
-go:
-   - master
+# go:
+   # - master
 before_install:
   - go get github.com/mattn/goveralls
   - go get -d -v gonum.org/v1/plot/...
