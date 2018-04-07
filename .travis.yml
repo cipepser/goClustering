@@ -1,5 +1,7 @@
-language: go
 sudo: false
+
+language: go
+go_import_path: gonum.org/v1/plot
 go:
   - tip
 before_install:
