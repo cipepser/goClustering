@@ -2,6 +2,10 @@ language: go
 sudo: false
 go:
   - tip
+addons:
+  apt:
+    packages:
+    - yum
 before_install:
   - yum install -y hg
   - go get github.com/mattn/goveralls
