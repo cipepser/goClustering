@@ -1,7 +1,10 @@
 sudo: false
 
 language: go
-go_import_path: gonum.org/v1/plot
+addons:
+  apt:
+    packages:
+      - mercurial
 go:
    - master
 before_install:
