@@ -1,8 +1,9 @@
 language: go
-sudo: true
+sudo: false
 go:
   - tip
 before_install:
+  - git clone git://github.com/rsc/pdf $GOPATH/src/rsc.io/pdf
   - go get github.com/mattn/goveralls
   - go get gonum.org/v1/plot/...
 script:
