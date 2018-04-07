@@ -1,8 +1,13 @@
 language: go
-sudo: false
+sudo: true
 go:
   - tip
+addons:
+  apt:
+    packages:
+    - gfortran
 before_install:
+  - yum install -y hg
   - go get github.com/mattn/goveralls
   - go get gonum.org/v1/plot/...
 script:
