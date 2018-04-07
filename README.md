@@ -18,11 +18,10 @@ You can get goClustering by using go get:
 go get github.com/cipepser/goClustering/...
 ```
 
-To visualize the dendrogram, you also install `gonum/plot` and `cipepser/plot`.
+To visualize the dendrogram, you also install `gonum/plot`.
 
 ```sh
 go get gonum.org/v1/plot/...
-go get github.com/cipepser/plot/...
 ```
 
 ## How to Use
@@ -78,7 +77,8 @@ import (
 	"math"
 
 	"github.com/cipepser/goClustering/ward"
-	"github.com/cipepser/plot/plotter"
+	"github.com/cipepser/goClustering/vis"
+
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/vg"
 	"gonum.org/v1/plot/vg/draw"
