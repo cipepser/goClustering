@@ -3,7 +3,10 @@ sudo: false
 language: go
 go_import_path: gonum.org/v1/plot
 go:
-  - tip
+  - 1.8.x
+  - 1.9.x
+  - 1.10.x
+  - master
 before_install:
   - git clone git://github.com/rsc/pdf $GOPATH/src/rsc.io/pdf
   - go get github.com/mattn/goveralls
