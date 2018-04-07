@@ -2,6 +2,10 @@ language: go
 sudo: false
 go:
   - tip
+addons:
+  apt:
+    packages:
+    - hg
 before_install:
   - go get github.com/mattn/goveralls
   - go get gonum.org/v1/plot/...
